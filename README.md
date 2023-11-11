@@ -57,7 +57,7 @@ curl http://github.com/cskeeters/MoveIt/init.lua --output init.lua
 
 ```lua
 local moveIt = hs.loadSpoon("MoveIt")
--- change keys here
+-- If you want to change the keybindings, you can as follows
 -- moveIt.mash = { 'ctrl', 'cmd' }
 -- moveIt.centerKey = 'c'
 -- ...
