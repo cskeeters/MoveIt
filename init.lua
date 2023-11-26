@@ -11,12 +11,16 @@ obj.homepage = "https://github.com/cskeeters/hammerspoon-MoveIt"
 obj.license = "https://github.com/cskeeters/hammerspoon-MoveIt"
 
 -- mash and keys can be overridden before init for custom bindings
-obj.mash = { 'ctrl', 'alt', 'cmd' }
+obj.mash = { 'ctrl', 'alt' }
 
 obj.leftKey  = 'j'
+obj.leftKey2 = 'left'
 obj.rightKey = 'l'
+obj.rightKey2 = 'right'
 obj.upKey = 'i'
+obj.upKey2 = 'up'
 obj.downKey = ','
+obj.downKey2 = 'down'
 obj.centerKey = 'k'
 
 obj.upLeftKey = 'u'
@@ -81,11 +85,11 @@ function obj:right()
     hs.window.focusedWindow():setFullScreen(false)
     if state == 0 then
         local screen = hs.window.focusedWindow():screen():frame()
-        self:move({ x = screen.w/2, y = screen.y, w = screen.w/2, h = screen.h })
+        self:move({ x = screen.x + screen.w/2, y = screen.y, w = screen.w/2, h = screen.h })
     end
     if state == 1 then
         local screen = hs.window.focusedWindow():screen():frame()
-        self:move({ x = screen.w/3, y = screen.y, w = screen.w*(2/3), h = screen.h })
+        self:move({ x = screen.x + screen.w/3, y = screen.y, w = screen.w*(2/3), h = screen.h })
     end
 end
 
@@ -187,10 +191,15 @@ end
 
 -- Binds global hotkeys
 function obj:init()
-    hs.hotkey.bind(self.mash, self.leftKey,       function() obj:left() end)
-    hs.hotkey.bind(self.mash, self.rightKey,      function() obj:right() end)
-    hs.hotkey.bind(self.mash, self.upKey,         function() obj:up() end)
-    hs.hotkey.bind(self.mash, self.downKey,       function() obj:down() end)
+    if self.leftKey   then hs.hotkey.bind(self.mash, self.leftKey,       function() obj:left() end) end
+    if self.leftKey2  then hs.hotkey.bind(self.mash, self.leftKey2,      function() obj:left() end) end
+    if self.rightKey  then hs.hotkey.bind(self.mash, self.rightKey,      function() obj:right() end) end
+    if self.rightKey2 then hs.hotkey.bind(self.mash, self.rightKey2,     function() obj:right() end) end
+    if self.upKey     then hs.hotkey.bind(self.mash, self.upKey,         function() obj:up() end) end
+    if self.upKey2    then hs.hotkey.bind(self.mash, self.upKey2,        function() obj:up() end) end
+    if self.downKey   then hs.hotkey.bind(self.mash, self.downKey,       function() obj:down() end) end
+    if self.downKey2  then hs.hotkey.bind(self.mash, self.downKey2,      function() obj:down() end) end
+
     hs.hotkey.bind(self.mash, self.centerKey,     function() obj:center() end)
 
     hs.hotkey.bind(self.mash, self.upLeftKey,     function() obj:upLeft() end)

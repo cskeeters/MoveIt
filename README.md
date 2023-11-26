@@ -68,7 +68,7 @@ moveIt:init()
 
 The defining feature of MoveIt is that each action has multiple states.  Press the keybinding repeatedly to cycle through the states.  This limits the amount of keys to remember for a bit greater functionality.  The default keybindings are made so that your hands don't move from the home row much.
 
-By default all keybindings require three modifiers: ^+⌥+⌘.  With these modifiers pressed, the following keys will take the listed actions.
+By default all keybindings require two modifiers: ^+⌥.  With these modifiers pressed, the following keys will take the listed actions.
 
 NOTE: This table is a bit weird but helps see the relative location of the keys.
 
