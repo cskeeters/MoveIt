@@ -1,6 +1,6 @@
 # MoveIt
 
-MoveIt is a macOS Window Mover/Resizer (some would say *Manager*) built on top of [Hammerspoon](https://www.hammerspoon.org/) ([github](https://github.com/Hammerspoon/hammerspoon)).  This operates similarly to [Spectical](https://www.spectacleapp.com/) or [Rectangle](https://rectangleapp.com/).
+MoveIt is a macOS Window Mover/Resizer (some would say *Manager*) built on top of [Hammerspoon](https://www.hammerspoon.org/) ([github](https://github.com/Hammerspoon/hammerspoon)).  This operates similarly to [Rectangle](https://rectangleapp.com/) or [Spectical](https://github.com/eczarny/spectacle).
 
 This program is a modification of [ShiftIt](https://github.com/peterklijn/hammerspoon-shiftit) with functionality customized according to my preferences.  With Hammerspoon doing all of the hard work, you may want to customize MoveIt or ShiftIt to meet your needs rather than use either of these tools as is.  The code is just one init.lua file, and it's not that many lines of code.
 
